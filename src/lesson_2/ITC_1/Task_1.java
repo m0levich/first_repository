@@ -24,10 +24,9 @@ public class Task_1 {
                 System.out.println("Ваш баланс: " + balance + " руб. Чтобы забрать сдачу, введите 1, либо любое число, чтобы продолжить");
                 int answer = scanner.nextInt();
                 if (answer == 1) {
-                    balance = 0;
                     System.out.println("Заберите сдачу");
-                    System.out.println();
-                    continue;
+                    System.out.println(balance + " рубчиков");
+                    break;
                 }
             }
             for (int i = 0; i < beverages.length; i++) {

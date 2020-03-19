@@ -5,38 +5,23 @@ import java.util.Scanner;
 public class Task_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Beverages sprite = Beverages.Sprite;
-        Beverages coca_cola = Beverages.Coca_cola;
-        Beverages fanta = Beverages.Fanta;
-        Beverages sevenup = Beverages.SEVENUP;
-        Beverages mountain_dew = Beverages.Moutain_DEW;
-        Beverages mirinda = Beverages.Mirinda;
-        Beverages pepsi = Beverages.Pepsi;
-        Beverages burn = Beverages.Burn;
-        Beverages red_bull = Beverages.Red_Bull;
-        Beverages bonAqua = Beverages.BonAqua;
 
-        Beverages[] beverages = new Beverages[]{sprite, coca_cola, fanta, sevenup, mountain_dew, mirinda, pepsi, burn, red_bull, bonAqua};
+        Beverages[] beverages = new Beverages[]{Beverages.Sprite, Beverages.Coca_cola, Beverages.Fanta, Beverages.SEVENUP, Beverages.Moutain_DEW, Beverages.Mirinda, Beverages.Pepsi, Beverages.Burn, Beverages.Red_Bull, Beverages.BonAqua};
 
         int balance = 0;
         while (true) {
-            if (balance != 0) {
-                System.out.println("Ваш баланс: " + balance + " руб. Чтобы забрать сдачу, введите 1, либо любое число, чтобы продолжить");
-                int answer = scanner.nextInt();
-                if (answer == 1) {
-                    balance = 0;
-                    System.out.println("Заберите сдачу");
-                    System.out.println();
-                    continue;
-                }
-            }
             for (int i = 0; i < beverages.length; i++) {
                 System.out.println("№ " + (i + 1) + ". Напиток: " + beverages[i].getName() + " Цена: " + beverages[i].getPrice() + " руб. Объем: " + beverages[i].getVolume() + " л " + "Остаток " + beverages[i].getCount());
             }
-            int number = 0;
             System.out.println();
-            System.out.print("Введите номер напитка: ");
-            number = scanner.nextInt();
+            System.out.print("Введите номер напитка или введите 0 для выхода из программы: ");
+            int number = scanner.nextInt();
+
+            if (number == 0) {
+                System.out.println("Заберите сдачу");
+                System.out.println(balance + " рубчиков");
+                break;
+            }
 
             if (number > beverages.length || number < 1) {
                 System.out.println("Такого номера напитка нет");
@@ -61,6 +46,16 @@ public class Task_1 {
             } else {
                 System.out.println("Недостаточно средств");
                 System.out.println();
+                continue;
+            }
+            if (balance != 0) {
+                System.out.println("Ваш баланс: " + balance + " руб. Чтобы забрать сдачу и завершить приложение, введите 1, либо любое число, чтобы продолжить");
+                int answer = scanner.nextInt();
+                if (answer == 1) {
+                    System.out.println("Заберите сдачу");
+                    System.out.println(balance + " рубчиков");
+                    break;
+                }
                 continue;
             }
         }
