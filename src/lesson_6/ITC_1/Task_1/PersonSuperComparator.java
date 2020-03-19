@@ -13,9 +13,6 @@ public class PersonSuperComparator implements Comparator<Person> {
             return result;
         }
 
-//        Integer x1 = ((Person) o1).getAge();
-//        Integer x2 = ((Person) o2).getAge();
-//        return x1.compareTo(x2);
         return o1.getAge() - o2.getAge();
     }
 }

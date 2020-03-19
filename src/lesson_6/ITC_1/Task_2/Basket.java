@@ -2,7 +2,7 @@ package lesson_6.ITC_1.Task_2;
 
 import java.util.List;
 
-public interface Basket {
+interface Basket {
 
     public void addProduct(String product, int quantity);
 

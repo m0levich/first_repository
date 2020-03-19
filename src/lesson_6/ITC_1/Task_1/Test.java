@@ -8,7 +8,7 @@ public class Test {
     public static void main(String[] args) {
         PersonSuperComparator personSuperComparator = new PersonSuperComparator();
 
-        Set set = new TreeSet(personSuperComparator);
+        Set<Person> set = new TreeSet(personSuperComparator);
         set.add(new Person(23, "Егор"));
         set.add(new Person(30, "Петр"));
         set.add(new Person(21, "Егор"));

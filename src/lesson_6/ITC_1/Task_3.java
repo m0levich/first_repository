@@ -9,7 +9,7 @@ public class Task_3 {
 
         map.put("Иванов", "Иван");
         map.put("Петров", "Иван1");
-        map.put("Сидоров", "Петр");
+        map.put("Сидоров", "Петр2");
         map.put("Васильев", "Петр1");
         map.put("Смирнов", "Петр");
 
@@ -17,18 +17,17 @@ public class Task_3 {
     }
 
     public static boolean isUnique(Map<String, String> map) {
-        boolean isUnique = true;
         for (String values1 : map.values()) {
             int count = 0;
             for (String values : map.values()) {
                 if (values.equals(values1)) {
                     count++;
                     if (count > 1) {
-                        isUnique = false;
+                        return false;
                     }
                 }
             }
         }
-        return isUnique;
+        return true;
     }
 }

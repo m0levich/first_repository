@@ -7,11 +7,11 @@ import java.util.Map;
 
 public class BasketClass implements Basket {
 
-    Map<String,Integer> basket = new HashMap<String, Integer>();
+    Map<String, Integer> basket = new HashMap<String, Integer>();
 
     @Override
     public void addProduct(String product, int quantity) {
-        basket.put(product,quantity);
+        basket.put(product, quantity);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class BasketClass implements Basket {
 
     @Override
     public void updateProductQuantity(String product, int quantity) {
-        basket.put(product,quantity);
+        basket.put(product, quantity);
     }
 
     @Override
@@ -31,13 +31,11 @@ public class BasketClass implements Basket {
 
     @Override
     public List<String> getProducts() {
-        List <String> list = new ArrayList<String>(basket.keySet());
-        return list;
+        return new ArrayList<String>(basket.keySet());
     }
 
     @Override
     public int getProductQuantity(String product) {
-        int quantity = basket.get(product);
-        return quantity;
+        return basket.get(product);
     }
 }
